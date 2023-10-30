@@ -1,4 +1,4 @@
-package com.api.email.core.ses;
+package com.api.email.infra.ses;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
@@ -11,17 +11,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class SesEmailSender implements EmailSenderGateway {
 
-    private final AmazonSimpleEmailService sesClient;
-
     @Autowired
-    public SesEmailSender(AmazonSimpleEmailService sesClient) {
-        this.sesClient = sesClient;
-    }
+    AmazonSimpleEmailService sesClient;
 
     @Override
     public void sendEmail(String toEmail, String subject, String body) {
         SendEmailRequest request = new SendEmailRequest()
-                .withSource("liveskipperdev@gmail.com")
+                .withSource("lebuffet02@gmail.com")
                 .withDestination(new Destination().withToAddresses(toEmail))
                 .withMessage(new Message()
                         .withSubject(new Content(subject))

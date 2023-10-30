@@ -1,4 +1,4 @@
-package com.api.email.core.config;
+package com.api.email.infra.config;
 
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder;
