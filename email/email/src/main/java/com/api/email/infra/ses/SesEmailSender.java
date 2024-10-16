@@ -15,10 +15,10 @@ public class SesEmailSender implements EmailSenderGateway {
     AmazonSimpleEmailService sesClient;
 
     @Override
-    public void sendEmail(String toEmail, String subject, String body) {
+    public void sendEmail(String to, String subject, String body) {
         SendEmailRequest request = new SendEmailRequest()
-                .withSource("lebuffet02@gmail.com")
-                .withDestination(new Destination().withToAddresses(toEmail))
+                .withSource("teste@gmail.com")
+                .withDestination(new Destination().withToAddresses(to))
                 .withMessage(new Message()
                         .withSubject(new Content(subject))
                         .withBody(new Body().withText(new Content(body))));
